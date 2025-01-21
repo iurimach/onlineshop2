@@ -1,6 +1,12 @@
 @media (max-width: 875px) {
     header{
         height: auto;
+        flex-direction: column;
+    }
+    .index{
+        flex-direction: column;
+        width: 120px;
+        margin: 0 auto;
     }
     #productDetailSection{
         margin: 0 auto;
@@ -29,6 +35,12 @@
     .indexproducthml{
         width: 180px;
         margin-left: 20%;
+    }
+    #catalogDialog{
+        left: 0px;
+        padding: 2px;
+        max-width: 290px;
+
     }
     .product-card{
         width: 150px;
