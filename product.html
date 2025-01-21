@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/products.css">
+    <link rel="stylesheet" href="styles/response.css">
+    
+    
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+        </script>
+        <script type="text/javascript">
+        (function(){
+        emailjs.init({
+        publicKey: "FNxoq5xErHjvs1Tsm", // es არის აქუნთ ღილაკში გადადი api key სქვმოთ წერია publick
+        });
+        })();
+    </script>
+</head>
+
+<body>
+    <header>
+        
+        <div class="logoproductpage"> <a href="index.html"> HomeMarket</a></div>
+        <div class="indexproducthml"> <a href="index.html"> ყველა პროდუქტი </a></div>
+        
+    </header>
+
+    <div id="detailallpoto">
+
+    </div>
+ 
+    <div class="wrapperproduct">
+        <div id="gallery" class="gallery-container"></div>
+        <div id="imageSliderContainer">
+            <div>
+                <div id="largeImage" class="large-image"></div>
+            </div>
+            <button id="buyButton">ყიდვა</button>
+
+        </div>
+
+        <div id="productDetailSection">
+            <h2 id="productName"></h2>
+            <p id="productPrice"></p>
+            <p id="newprice"></p>
+            <div id="productDescription"></div>
+
+            <!-- Display product ID -->
+            <p id="productId"></p>
+
+
+            <div id="productAdditionalDescriptions"></div>
+        </div>
+    </div>
+    <!-- ეს დიალოგი ხსნის გამოკითვას რით იხდის, და გადადის ახალ დილოგზე მიბმულია ყიდვის ღილკზე-->
+    <div id="dialog-container"> 
+        <div class="dialog">
+            <div style="display: flex; justify-content: space-between; "class="dialoghead">
+                <p id="dialog-message">აირჩიეთ გადახდის მეთოდი:</p>
+                <button id="closeDialog" class="close-button">X</button>
+            </div>
+          
+          <button id="courierButton" class="pay-button" onclick="creatregistracionform()">გადახდა კურიერთან</button>
+          <button id="cardButton" class="pay-button" >გადახდა ბარათით</button>
+          <div id="regitracionform"></div>
+          
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Us Section -->
+            <div class="footer-section about-us">
+                <h2>About Us</h2>
+                <p>Welcome to our Online Shop! We provide high-quality products at affordable prices. Customer satisfaction is our top priority.</p>
+            </div>
+    
+            <!-- Social Networks Section -->
+            <div class="footer-section social-networks">
+                <h2>Follow Us</h2>
+                <ul>
+                    <li><a href="#" target="_blank">Facebook</a></li>
+                    <li><a href="#" target="_blank">Twitter</a></li>
+                    <li><a href="#" target="_blank">Instagram</a></li>
+                    <li><a href="#" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+    
+            <!-- Address Section -->
+            <div class="footer-section address">
+                <h2>Contact Us</h2>
+                <p>123 Main Street, Suite 400</p>
+                <p>City, Country 12345</p>
+                <p>Email: support@onlineshop.com</p>
+                <p>Phone: +1 234-567-890</p>
+            </div>
+        </div>
+    </footer>
+   
+   
+    <script src="js/PRODUCTDETAIL.js"></script>
+</body>
+</html>

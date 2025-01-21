@@ -1,0 +1,147 @@
+/* header */
+header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.indexproducthml{
+  width: 250px;
+  max-width: 250px;  
+}
+.logoproductpage>a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.indexproducthml>a{
+color: #fff;
+text-decoration: none;
+width: auto;
+}
+.indexproducthml>a:hover{
+  color: rgb(14, 13, 13);
+}
+
+.wrapperproduct{
+   
+    max-width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+}
+.gallery-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid rgb(192, 25, 25)
+}
+.large-image>img{
+    display: flex;
+    width: 400px;
+    max-width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.buttondivproduct{
+
+display: flex;
+justify-content: center;
+
+}
+#productDetailSection{
+    margin-left: 10px;
+}
+
+
+
+  #dialog-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dialog {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+  }
+
+  .dialog button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .close-button {
+    background: red;
+    color: #fff;
+  }
+
+  .pay-button {
+    background: green;
+    color: #fff;
+  }
+
+#buyButton{
+    width: 400px;
+    max-width: 400px;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(122, 29, 255);
+    color: white;
+    font-size: 18px;
+    margin-top: 10px;
+}
+#buyButton:hover{
+    color: #fff;
+}
+
+.oldprice{
+  color: red;
+  text-decoration: line-through;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#submitbtid{
+  background-color:rgb(122 29 255); ;
+}
+#submitbtid:hover{
+  background-color:rgb(38, 150, 38);
+}
+#nameid,#gvariid,#telid,#adgiliid{
+  border-radius: 5px;
+  border-color: rgb(38, 150, 38);
+}
+.dialoghead{
+  width: 100%;
+  margin-top: -20px;
+  margin-bottom: 40px;
+}
+.footer{
+  width: 100% !important;
+}

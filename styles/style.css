@@ -1,0 +1,465 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    position: relative;
+    height: 30px;
+   display: flex;
+    background-color: rgb(122 29 255);
+    color: white;
+    padding: 6px 0;
+}
+header>p{
+    margin: 0 auto;
+}
+.indexicon{
+    width: 30px;
+    position: absolute;
+    margin-left: 10%;
+    
+}
+.header2{
+    width: 100%;
+    height: 60px;
+    border-radius: 10px;
+    border-color: rgb(122 29 255);
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: auto;
+    margin-top: 10px;
+}
+.catalogibt{
+    height: 45px;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+.catalogibt:hover{
+    color:rgb(122 29 255); ;
+}
+.topgayidvadi{
+    border-radius: 6px;
+    border: none;
+    background-color: white;
+}
+.topgayidvadi:hover{
+    color:rgb(122 29 255); ;
+}
+#searchInput{
+    padding-right: 36px;
+    padding-left: 16px;
+    height: 33px;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 500px;
+    border-color: rgb(122 29 255);
+}
+.index{
+    width: 50px;
+    height: 30px;
+    margin-left: 40px;
+    font-weight: 20px;
+    font-size: 20px;
+}
+.index>a{
+    color: #fff;
+    text-decoration: none;
+}
+h1, h2 {
+    margin: 0;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 5px;
+    margin: 5px;
+}
+#productFilters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    height: auto;
+   
+}
+#priceFilter{
+    border-radius: 5px;
+    border-color: rgb(122 29 255);
+}
+button {
+    padding: 5px 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.product-card {
+    border: 1px solid #f3ebeb;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+    display: inline-block;
+}
+.oldprice{
+    color: red;
+    text-decoration: line-through;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+#productGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+#catalogDialog {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    /* right: 0;
+    bottom: 0; */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    display: none;
+    margin: 0 auto;
+    width: 400px;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+}
+
+.closebutton{
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 90%;
+    
+}
+
+#productList {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.productimage{
+    width: 120px;
+    
+}
+.productimage:hover{
+    transform: scale(1.15);
+}
+#productList> button {
+    background-color: #444;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#productList button:hover {
+    background-color: #666;
+}
+
+.slider-image{
+    width: 200px;
+}
+.iconburger{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+/* სლაიდერი*/
+/* სლაიდეირ */
+
+.slider-container {
+    position: relative;
+    width: 80%;
+    height: 300px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    background-color: #000;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .slider-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ეს ეუბნება მთლიანად გაიშლოს სურათი  , მაგრამ ქვემოთ contein თან მოდის წინაღმდგბში და ითიშება  */
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+    object-fit: contain;  /* ეს ეუბნება სიმაღლის მიუხედავტ გამოჩინე დივში მლინ სურთიო */
+  }
+
+  .slider-container img.hidden {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  .slider-container img.active {
+    opacity: 1;
+    z-index: 2;
+  }
+
+  .slider-toggle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    z-index: 3;
+  }
+
+  .slider-toggle.left {
+    left: 10px;
+  }
+
+  .slider-toggle.right {
+    right: 10px;
+  }
+
+  .slider-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+.categoriaDesktopsection{
+    width: 80%;
+    
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.categorcategoriadesctopWrapper{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+   
+  }
+  .categorcategoriadesctopWrapper>p{
+
+    font-size: 17px;
+  }
+.categoriadesctopsort{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid rgb(102, 100, 100);
+    background-color:white;
+}
+/*მეორე სლაიდის სტილებია აქედან */
+.slider-container2 {
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 35px;
+  }
+
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slider-item {
+    flex: 0 0 16.66%; /* 100% / 6 items visible */
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+   
+    color: rgb(8, 8, 8);
+    font-size: 1.5em;
+    border-radius: 5px;
+    margin: 0 5px;
+  }
+
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+ /*აქ დამტვრდა მეორე სლიდის სიტლები*/ 
+
+ .gamyofixazi{
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin-top: 10px;
+ }
+.wrapper1{
+    width: 100%;
+   margin-top: 50px;
+    display: flex;
+}
+.searchbar{
+    width: 400px;
+    max-width: 400px;
+    border-right: 2px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.searchbartitle{
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+/* footer */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    font-size: 14px;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+}
+
+.footer-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #FFA500;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    margin: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #FFA500;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-container .about-us,
+.footer-container .address {
+    max-width: 400px;
+}
+
+.footer-container .social-networks {
+    text-align: left;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 20px 0;
+}
+
+.pagination button {
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #FFA500;
+}
+
+.pagination button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.page-info {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dataNow{
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+   
+}
+.dataNow>p{
+    margin: 0 auto; 
+}

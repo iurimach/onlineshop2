@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Dating Site</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/response.css">
+</head>
+<body>
+
+    <header>
+        <div class="index"> <a href="index.html"> Homemarket</a></div>
+       <P>თბილისის მასშტაბით მიტანა უფასოა</P>
+    </header>
+    <div class="header2">
+        
+        <button onclick="toggleCatalog()" class="catalogibt"> <img src="icon/Hamburger_icon.svg.png" alt="icon" class="iconburger">პატალოგი</button>
+        <input type="text" id="searchInput" placeholder="მოძებნე პროდუქცია">
+        <button class="topgayidvadi">ტოპ გაყიდვადი</button>
+    </div>
+
+    <div class="slider-container" id="slider">
+        <!-- Images will be dynamically inserted here -->
+        <button class="slider-toggle left" id="prevButton">&#8249;</button>
+        <button class="slider-toggle right" id="nextButton">&#8250;</button>
+    </div>
+
+    <div id="categoryButtons"></div>
+
+    
+   
+    <div class="slider-container2" id="sliderContainer2">
+        <button class="nav-button prev">&#8249;</button>
+        <div class="slider" id="slider2">
+          <div class="slider-item">
+            <div onclick="findBurgi()" class="categorcategoriadesctopWrapper">
+                <img src="images/xelsawyo/burgi1.jpg" alt="err" class="categoriadesctopsort">
+                <p>ბურღი</p>
+            </div>
+          </div>
+          <div class="slider-item">
+            <div onclick="findXelsawyo()" class="categorcategoriadesctopWrapper">
+                <img src="images/xelsawyo/xelsawyo1.jpg" alt="err" class="categoriadesctopsort">
+                <p>ხელსაწყოები</p>
+            </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item">
+                <div onclick="findGazonis()" class="categorcategoriadesctopWrapper">
+                    <img src="images/xelsawyo/gazonis1.jpg" alt="err" class="categoriadesctopsort">
+                    <p>გაზონისთვის</p>
+                </div>
+              </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item">
+                <div onclick="findPolirebis()" class="categorcategoriadesctopWrapper">
+                    <img src="images/xelsawyo/bargalka.jpg" alt="err" class="categoriadesctopsort">
+                    <p>პოლირების</p>
+                </div>
+              </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item">
+                <div onclick="findLazerulitarazo()" class="categorcategoriadesctopWrapper">
+                    <img src="images/xelsawyo/lazeruli tarazo.jpg" alt="err" class="categoriadesctopsort">
+                    <p>ლაზეერული თარაზო</p>
+                </div>
+              </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item">
+                <div onclick="findkanchi()" class="categorcategoriadesctopWrapper">
+                    <img src="images/xelsawyo/qanchis gasagebis nakrebi.jpg" alt="err" class="categoriadesctopsort">
+                    <p>ქანჩის გასაღების ნაკრები</p>
+                </div>
+              </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item">
+                <div onclick="findfilebisachreli()" class="categorcategoriadesctopWrapper">
+                    <img src="images/xelsawyo/filebis sachreli.jpg" alt="err" class="categoriadesctopsort">
+                    <p>ფილების საჭრელი</p>
+                </div>
+              </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item">
+                <div onclick="findSaxraxnisisNakrebi()" class="categorcategoriadesctopWrapper">
+                    <img src="images/xelsawyo/saxraxnisis nakrebi.jpg" alt="err" class="categoriadesctopsort">
+                    <p>სახრახნისის ნაკრები</p>
+                </div>
+              </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item">
+                <div onclick="findShesawamliAparati()" class="categorcategoriadesctopWrapper">
+                    <img src="images/xelsawyo/shesawamli aparati.jpg" alt="err" class="categoriadesctopsort">
+                    <p>შესაწამლი აპარატი</p>
+                </div>
+              </div>
+          </div>
+          <div class="slider-item">
+            <div class="slider-item">
+                <div onclick="findkibe()" class="categorcategoriadesctopWrapper">
+                    <img src="images/xelsawyo/kibe.jpg" alt="err" class="categoriadesctopsort">
+                    <p>კიბე</p>
+                </div>
+          </div>
+        </div></div>
+        <button class="nav-button next">&#8250;</button>
+      </div>
+
+      <div class="gamyofixazi"></div>
+      
+    <div class="wrapper1">
+        <div id="searchbar" class="searchbar">
+            <div class="searchbartitle">გაფილტრე მონაცემები</div>
+            
+            <input type="number" id="priceFilter" placeholder="მაქსიმალური ფასი" onchange="filterByPrice()">
+            <button onclick="sortByPrice('asc')">სორტირება ფასის ზრდადობით</button>
+            <button onclick="sortByPrice('desc')">სორტირება ფასის კლებადობით</button>
+        </div>
+
+        <div id="productGrid"></div>
+    </div>
+
+    <div id="pagination" class="pagination"></div>
+    <div id="pageInfo" class="page-info"></div>
+ <!-- აქ არის ჩამოსაშლელი კატალოგის ღილაკები რომელიც იფილტრება   ჯსონის name თი-->
+    <div id="catalogDialog" style="display: none;">
+       <div class="closebutton"> <button onclick="toggleCatalog()" class="closebutton"><P>X</P></button> </div>
+        <div id="productList">
+            <div style="height: 400px;">
+                <button onclick="findBurgi()">ბურღი</button>
+                <div><button onclick="findXelsawyo()">ხელსაწყოები</button></div>
+                <button onclick="findGazonis()">გაზონის საკრეჭი</button>
+                <button onclick="findPolirebis()">პოლირების აპარატი</button>
+                <button onclick="findLazerulitarazo()">პოლირების აპარატი</button>
+                <button onclick="findkanchi()">პოლირების აპარატი</button>
+                <button onclick="findfilebisachreli()">პოლირების აპარატი</button>
+                
+             </div>
+            <div>
+                <button onclick="findSaxraxnisisNakrebi()">პოლირების აპარატი</button>
+                <button onclick="findShesawamliAparati()">საწამლი აპარატი</button>
+                <button onclick="findkibe()">კიბე</button>
+                <button onclick="findKedlisachreli()">კედლის საჭრელი</button>
+                <button onclick="findUsadenoXerxi()">უსადენო ხერხი</button>
+             </div>
+            
+        </div>
+
+       
+    </div>
+
+    
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Us Section -->
+            <div class="footer-section about-us">
+                <h2>About Us</h2>
+                <p>Welcome to our Online Shop! We provide high-quality products at affordable prices. Customer satisfaction is our top priority.</p>
+            </div>
+    
+            <!-- Social Networks Section -->
+            <div class="footer-section social-networks">
+                <h2>Follow Us</h2>
+                <ul>
+                    <li><a href="#" target="_blank">Facebook</a></li>
+                    <li><a href="#" target="_blank">Instagram</a></li>
+                    
+                </ul>
+            </div>
+    
+            <!-- Address Section -->
+            <div class="footer-section address">
+                <h2>Contact Us</h2>
+                <a href="mailto:markethomemarket@gmail.com" style="text-decoration: none; color: white;">Email: markethomemarket@gmail.com</a>
+                <p>Phone: 577 479 475</p>
+            </div>
+        </div>
+        <div class="dataNow"><P>© 2025</P></div>
+    </footer>
+    <script src="js/slider.js"></script>
+    <script src="js/slider2.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
